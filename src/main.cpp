@@ -1,6 +1,7 @@
-#include <iostream>
+#include <cstdio>
+#include <SDL2/SDL.h>
 
 int main() {
-  std::cout << "google" << std::endl;
+  printf("Init SDL2");
   return 0;
 }
