@@ -11,10 +11,21 @@
   }: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    lspservers = with pkgs; [
+      clang-tools
+      cmake-language-server
+    ];
   in {
     devShells.${system}.default = pkgs.mkShell {
-      nativeBuildInputs = with pkgs; [];
-      buildInputs = with pkgs; [];
+      nativeBuildInputs = with pkgs; [
+        cmake
+        pkg-config
+        gcc
+        lspservers
+      ];
+      buildInputs = with pkgs; [
+        SDL2
+      ];
     };
   };
 }
