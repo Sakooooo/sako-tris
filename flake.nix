@@ -25,6 +25,7 @@
       ];
       buildInputs = with pkgs; [
         SDL2.dev
+        SDL2_image
       ];
     };
   };
